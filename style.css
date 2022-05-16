@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    height: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    font-size: 1.2rem;
+    background-color: gray;
+    color: black;
+    margin: 5%;
+}
+
+.wrapper {
+    padding: 2rem;
+    max-width: 1024px;
+    margin: 0 auto;
+    min-width: 200px;
+}
+
+.container {
+    overflow: hidden;
+}
+
+.slides {
+    display: flex;
+    width: 400%;
+    height: 10%;
+}
+
+.slide {
+    width: 25%;
+    transition: .5s ease-in-out;
+}
+
+.slide img {
+    width: 100%;
+}
+
+img {
+    border: 0.2rem solid;
+}
+
+input[name="radio-btn"] {
+    display: none;
+}
+
+.control {
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.control .title-wrapper {
+    width: 80%;
+    overflow: hidden;
+}
+
+.control .title-wrapper .titles {
+    display: flex;
+    width: 400%;
+}
+
+.control .title-wrapper .titles .title {
+    transition: .5s ease-in-out;
+}
+
+.title {
+    display: block;
+    width: 25%;
+}
+
+.nav {
+    display: flex;
+}
+
+.button {
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.2rem;
+}
+
+.button span {
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    border: 0.2rem solid #79c0ff;
+    background-color: #79c0ff;
+    border-radius: 50%;
+}
+
+.button:hover {
+    cursor: pointer;
+}
+
+
+#r1:checked ~ .slides .s1,
+#r1:checked ~ .control .title-wrapper .titles .default {
+    margin-left: 0;
+}
+
+#r2:checked ~ .slides .s1,
+#r2:checked ~ .control .title-wrapper .titles .default {
+    margin-left: -25%;
+}
+
+#r3:checked ~ .slides .s1,
+#r3:checked ~ .control .title-wrapper .titles .default  {
+    margin-left: -50%;
+}
+
+#r4:checked ~ .slides .s1,
+#r4:checked ~ .control .title-wrapper .titles .default {
+    margin-left: -75%;
+}
+
+
+
+#r1:checked ~ .control .nav label[for=r1] span,
+#r2:checked ~ .control .nav label[for=r2] span,
+#r3:checked ~ .control .nav label[for=r3] span,
+#r4:checked ~ .control .nav label[for=r4] span {
+  background: transparent;
+  border: 0.1rem solid #79c0ff;
+}
+
+#r1:checked ~ .control .nav label[for=r1]:hover span,
+#r2:checked ~ .control .nav label[for=r2]:hover span,
+#r3:checked ~ .control .nav label[for=r3]:hover span,
+#r4:checked ~ .control .nav label[for=r4]:hover span {
+  background: transparent;
+  border: 0.1rem solid white;
+}
+
+body .wrapper .container .control .nav .button:hover span {
+    border-color: white;
+    background-color: white;
+}
+
+@media (max-width:560px) {
+    .control{
+        flex-direction: column-reverse;
+    }
+
+    .control .title-wrapper {
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+}
